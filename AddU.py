@@ -186,5 +186,5 @@ class Ui_AddUchenik(object):
         self.lineEdit_2.setText("")
         self.lineEdit_2.setPlaceholderText("Иванов")
         self.lineEdit_3.setText("")
-        self.LineEdit_3.setPlaceholderText("Иванович")
+        self.lineEdit_3.setPlaceholderText("Иванович")
 

@@ -63,4 +63,4 @@ def studgroups_add():
         else:
             print("ошибка")
             exit(0)
-
+#test

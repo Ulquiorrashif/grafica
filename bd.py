@@ -11,7 +11,7 @@ with sq.connect("uni.db") as con:
     user_photo BLOB)
     """)
 
-    #cur.executescript("DROP TABLE IF EXISTS groups")
+    cur.executescript("DROP TABLE IF EXISTS groups")
     cur.executescript("""CREATE TABLE IF NOT EXISTS groups (
     group_id INTEGER primary key AUTOINCREMENT,
     group_title TEXT NOT NULL,
@@ -19,13 +19,13 @@ with sq.connect("uni.db") as con:
     group_amount INTEGER NOT NULL)
     """)
 
-    #cur.executescript("DROP TABLE IF EXISTS group_members")
+    cur.executescript("DROP TABLE IF EXISTS group_members")
     cur.executescript("""CREATE TABLE IF NOT EXISTS group_members (
     user_id INTEGER NOT NULL,
     group_title TEXT NOT NULL)
     """)
 
-    #cur.executescript("DROP TABLE IF EXISTS redact_group")
+    cur.executescript("DROP TABLE IF EXISTS redact_group")
     cur.executescript("""CREATE TABLE IF NOT EXISTS redact_group (
     group_DO TEXT NOT NULL,
     group_POSLE TEXT NOT NULL)
@@ -38,7 +38,7 @@ def students_add():
         user_FIO = input("Введите ФИО студента, которого хотите отредактировать: ")
         user_birthday = input("Введите ДР студента, которого хотите отредактировать: ")
         cur.execute("INSERT INTO students (user_FIO, user_birthday) VALUES (?,?)", (user_FIO, user_birthday))
-#students_add()
+students_add()
 def groups_add():
     with sq.connect("uni.db") as con:
         cur = con.cursor()
@@ -65,8 +65,7 @@ def studgroups_add():
             exit(0)
 
 
-#studgroups_add()
-
+studgroups_add()
 
 
 def groups_output():
@@ -78,10 +77,10 @@ def groups_output():
         records = cur.fetchall()
         for row in records:
             output.append(row[1])
-        return (output)
+        print(output)
 
 
-#groups_output()
+groups_output()
 
 
 # def students_redact():

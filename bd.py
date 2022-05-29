@@ -11,7 +11,7 @@ with sq.connect("uni.db") as con:
     user_photo BLOB)
     """)
 
-    #cur.executescript("DROP TABLE IF EXISTS groups")
+    cur.executescript("DROP TABLE IF EXISTS groups")
     cur.executescript("""CREATE TABLE IF NOT EXISTS groups (
     group_id INTEGER primary key AUTOINCREMENT,
     group_title TEXT NOT NULL,
@@ -32,20 +32,19 @@ with sq.connect("uni.db") as con:
     """)
 
 
-def students_add():
+def students_add(a,b):
     with sq.connect("uni.db") as con:
         cur = con.cursor()
-        user_FIO = input("Введите ФИО студента, которого хотите отредактировать: ")
-        user_birthday = input("Введите ДР студента, которого хотите отредактировать: ")
+        user_FIO =  a  # input("Введите ФИО студента, которого хотите отредактировать: ")
+        user_birthday = b#input("Введите ДР студента, которого хотите отредактировать: ")
         cur.execute("INSERT INTO students (user_FIO, user_birthday) VALUES (?,?)", (user_FIO, user_birthday))
-students_add()
-def groups_add():
+def groups_add(a,b,c):
     with sq.connect("uni.db") as con:
         cur = con.cursor()
-        group_title = input("Введите название группы: ")
-        group_faculty = input("Введите название кафедры, к которой прикреплена группа: ")
-        cur.execute("INSERT INTO groups (group_title, group_faculty) VALUES (?,?)", (group_title,group_faculty,))
-
+        group_title =a #input("Введите название группы: ")
+        group_faculty =b #input("Введите название кафедры, к которой прикреплена группа: ")
+        group_count=c#input()
+        cur.execute("INSERT INTO groups (group_title, group_faculty,group_amount) VALUES (?,?,?)", (group_title,group_faculty,group_count))
 
 
 def studgroups_add():
@@ -63,9 +62,8 @@ def studgroups_add():
         else:
             print("ошибка")
             exit(0)
+#studgroups_add()
 
-
-studgroups_add()
 
 
 def groups_output():
@@ -80,7 +78,7 @@ def groups_output():
         print(output)
 
 
-groups_output()
+
 
 
 # def students_redact():

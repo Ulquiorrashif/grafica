@@ -15,7 +15,7 @@ from adduvg import Ui_MainWindow
 
 class Ui_Dialog():
     def setupUi(self, Dialog):
-        Dialog.setObjectName("Главное меню")
+        Dialog.setObjectName("Добавление")
         Dialog.resize(300, 300)
         Dialog.setStyleSheet("background-color: rgb(0, 0, 62);")
         self.pushButton = QtWidgets.QPushButton(Dialog)
@@ -110,7 +110,7 @@ class Ui_Dialog():
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Главное меню"))
+        Dialog.setWindowTitle(_translate("Dialog", "Добавление"))
         self.pushButton.setToolTip(_translate("Dialog", "<html><head/><body><p>фыв</p></body></html>"))
         self.pushButton.setText(_translate("Dialog", "Добавить ученика"))
         self.pushButton_2.setText(_translate("Dialog", "Добавить группу"))

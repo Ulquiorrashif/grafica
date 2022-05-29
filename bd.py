@@ -3,7 +3,7 @@ import sqlite3 as sq
 with sq.connect("uni.db") as con:
 
     cur = con.cursor()
-    #cur.executescript("DROP TABLE IF EXISTS students")
+    cur.executescript("DROP TABLE IF EXISTS students")
     cur.executescript("""CREATE TABLE IF NOT EXISTS students (
     user_id INTEGER primary key AUTOINCREMENT,
     user_FIO TEXT NOT NULL,
@@ -38,7 +38,7 @@ def students_add():
         user_FIO = input("Введите ФИО студента, которого хотите отредактировать: ")
         user_birthday = input("Введите ДР студента, которого хотите отредактировать: ")
         cur.execute("INSERT INTO students (user_FIO, user_birthday) VALUES (?,?)", (user_FIO, user_birthday))
-students_add()
+#students_add()
 def groups_add():
     with sq.connect("uni.db") as con:
         cur = con.cursor()
@@ -65,7 +65,7 @@ def studgroups_add():
             exit(0)
 
 
-studgroups_add()
+#studgroups_add()
 
 
 
@@ -78,10 +78,10 @@ def groups_output():
         records = cur.fetchall()
         for row in records:
             output.append(row[1])
-        print(output)
+        return (output)
 
 
-groups_output()
+#groups_output()
 
 
 # def students_redact():

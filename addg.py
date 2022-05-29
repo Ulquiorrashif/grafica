@@ -10,6 +10,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+import bd
+
 
 class Ui_AddGrupp(object):
     def setupUi(self, AddUchenik):
@@ -111,21 +113,21 @@ class Ui_AddGrupp(object):
         self.label_2.setStyleSheet("Text:wihte;\n"
 "")
         self.label_2.setObjectName("label_2")
-        self.comboBox = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox.setGeometry(QtCore.QRect(10, 150, 281, 22))
-        font = QtGui.QFont()
-        font.setFamily("Eras Medium ITC")
-        font.setPointSize(12)
-        self.comboBox.setFont(font)
-        self.comboBox.setStyleSheet("background-color: rgb(208, 178, 9);\n"
-"")
-        self.comboBox.setObjectName("comboBox")
+
         self.lineEdit_2.raise_()
         self.pushButton.raise_()
         self.label.raise_()
         self.label_2.raise_()
         self.lineEdit.raise_()
-        self.comboBox.raise_()
+        self.comboBox = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox.setGeometry(QtCore.QRect(10, 150, 281, 22))
+        self.comboBox.setStyleSheet("background-color: rgb(208, 178, 9);\n"
+                                    "text-color:rgb(255, 255, 255);")
+        self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
         AddUchenik.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(AddUchenik)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 300, 21))
@@ -147,14 +149,18 @@ class Ui_AddGrupp(object):
         self.pushButton.setText(_translate("AddUchenik", "Добавить ученика"))
         self.label.setText(_translate("AddUchenik", "<html><head/><body><p><span style=\" font-size:11pt; color:#ffffff;\">Название группы</span></p></body></html>"))
         self.label_2.setText(_translate("AddUchenik", "<html><head/><body><p align=\"center\"><span style=\" font-size:11pt; color:#ffffff;\">Количество</span></p><p align=\"center\"><span style=\" font-size:11pt; color:#ffffff;\">учеников</span></p></body></html>"))
-
+        self.comboBox.setItemText(0, _translate("MainWindow", "Программная инженерия"))
+        self.comboBox.setItemText(1, _translate("MainWindow", "Информационные системы и технологии"))
+        self.comboBox.setItemText(2, _translate("MainWindow", "Прикладная математика"))
+        self.comboBox.setItemText(3, _translate("MainWindow", "Прикладная информатика"))
     def Ustanovka(self):
         self.lineEdit.setText("")
         self.lineEdit_2.setText("")
         self.lineEdit.setPlaceholderText("ИКБО-05-21")
         self.lineEdit_2.setPlaceholderText("27")
     def pu(self):
-        ######
+        kav=self.comboBox.currentText()
+        bd.groups_add(self.lineEdit.text(),kav)
         self.Ustanovka()
 
 

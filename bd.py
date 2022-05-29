@@ -38,13 +38,12 @@ def students_add(a,b):
         user_FIO =  a  # input("Введите ФИО студента, которого хотите отредактировать: ")
         user_birthday = b#input("Введите ДР студента, которого хотите отредактировать: ")
         cur.execute("INSERT INTO students (user_FIO, user_birthday) VALUES (?,?)", (user_FIO, user_birthday))
-def groups_add(a,b,c):
+def groups_add(a,b):
     with sq.connect("uni.db") as con:
         cur = con.cursor()
         group_title =a #input("Введите название группы: ")
         group_faculty =b #input("Введите название кафедры, к которой прикреплена группа: ")
-        group_count=c#input()
-        cur.execute("INSERT INTO groups (group_title, group_faculty,group_amount) VALUES (?,?,?)", (group_title,group_faculty,group_count))
+        cur.execute("INSERT INTO groups (group_title, group_faculty,group_amount) VALUES (?,?,?)", (group_title,group_faculty,0))
 
 
 def studgroups_add():

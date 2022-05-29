@@ -178,7 +178,8 @@ class Ui_AddUchenik(object):
         self.lineEdit_4.setToolTip(_translate("AddUchenik", "<html><head/><body><p>sdfsfddf </p></body></html>"))
 
     def pusk(self):
-        bd.students_add(self.lineEdit.text(), self.lineEdit_2.text())
+        a=self.lineEdit.text()+" "+self.lineEdit_2.text()+" "+self.lineEdit_3.text()
+        bd.students_add(a, self.dateEdit.text())
         self.Ustanovka()
     def Ustanovka(self):
         self.lineEdit.setText("")
@@ -187,4 +188,6 @@ class Ui_AddUchenik(object):
         self.lineEdit_2.setPlaceholderText("Иванов")
         self.lineEdit_3.setText("")
         self.lineEdit_3.setPlaceholderText("Иванович")
+        #self.dateEdit.clear()
+        #self.dateEdit.setDate("02.01.2000")
 

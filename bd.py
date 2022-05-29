@@ -68,6 +68,7 @@ def studgroups_add():
 studgroups_add()
 
 
+
 def groups_output():
     with sq.connect("uni.db") as con:
         output = []

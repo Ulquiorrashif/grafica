@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import bd
+#import bd
 
 class Ui_AddUchenik(object):
     def setupUi(self, AddUchenik):

@@ -32,11 +32,11 @@ with sq.connect("uni.db") as con:
     """)
 
 
-def students_add():
+def students_add(a,b):
     with sq.connect("uni.db") as con:
         cur = con.cursor()
-        user_FIO = input("Введите ФИО студента, которого хотите отредактировать: ")
-        user_birthday = input("Введите ДР студента, которого хотите отредактировать: ")
+        user_FIO = a #input("Введите ФИО студента, которого хотите отредактировать: ")
+        user_birthday = b# input("Введите ДР студента, которого хотите отредактировать: ")
         cur.execute("INSERT INTO students (user_FIO, user_birthday) VALUES (?,?)", (user_FIO, user_birthday))
 
 def groups_add():
@@ -45,7 +45,7 @@ def groups_add():
         group_title = input("Введите название группы: ")
         cur.execute("INSERT INTO groups (group_title) VALUES (?)", (group_title,))
 
-print("ТЕСТ РЕДАКТИРОВАНИЯ ")
+
 
 
 # def students_redact():
@@ -101,25 +101,22 @@ print("ТЕСТ РЕДАКТИРОВАНИЯ ")
 # groups_delete()
 
 
-def studgroups_add():
-    with sq.connect("uni.db") as con:
-        cur = con.cursor()
-        user_name2 = input("Введите имя студента: ")
-        user_surname2 = input("Введите фамилию студента: ")
-        group_title2 = input("Введите название группы, в которую хотите добавить студента: ")
-        if cur.execute("SELECT 1 FROM groups WHERE group_title = :group", {"group": group_title1}).fetchone():
-            if cur.execute("SELECT 1 FROM students WHERE user_name = :name", {"name": user_name1}).fetchone():
-                if cur.execute("SELECT 1 FROM students WHERE user_surname = :surname", {"surname": user_surname1}).fetchone():
-                      cur.execute("INSERT INTO group_members (group_title, user_name, user_surname) VALUES (?,?,?)", (group_title1, user_name1, user_surname1,))
-                else:
-                    print("ошибка")
-                    exit(0)
-            else:
-                print("ошибкаи")
-                exit(0)
-        else:
-            print("ошибка")
-            exit(0)
-
-
-studgroups_add()
+# def studgroups_add(a,b,c):
+#     with sq.connect("uni.db") as con:
+#         cur = con.cursor()
+#         user_name2 = a#input("Введите имя студента: ")
+#         user_surname2 =b#input("Введите фамилию студента: ")
+#         group_title2 = c#input("Введите название группы, в которую хотите добавить студента: ")
+#         if cur.execute("SELECT 1 FROM groups WHERE group_title = :group", {"group": group_title1}).fetchone():
+#             if cur.execute("SELECT 1 FROM students WHERE user_name = :name", {"name": user_name1}).fetchone():
+#                 if cur.execute("SELECT 1 FROM students WHERE user_surname = :surname", {"surname": user_surname1}).fetchone():
+#                       cur.execute("INSERT INTO group_members (group_title, user_name, user_surname) VALUES (?,?,?)", (group_title1, user_name1, user_surname1,))
+#                 else:
+#                     print("ошибка")
+#                     exit(0)
+#             else:
+#                 print("ошибкаи")
+#                 exit(0)
+#         else:
+#             print("ошибка")
+#             exit(0)

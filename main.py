@@ -19,6 +19,8 @@ import Glafwindow
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+
+import OsnovnyaBD
 from AddU import Ui_AddUchenik
 from addg import Ui_AddGrupp
 from adduvg import Ui_MainWindow
@@ -148,6 +150,7 @@ class Ui_Main():
 def application():
     import sys
     app = QtWidgets.QApplication(sys.argv)
+    OsnovnyaBD.Begin()
     Dialog = QtWidgets.QDialog()
     main =Ui_Main()
     main.setupUi(Dialog)

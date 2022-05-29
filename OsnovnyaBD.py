@@ -11,7 +11,7 @@ def Begin():
         user_photo BLOB)
         """)
 
-        cur.executescript("DROP TABLE IF EXISTS groups")
+        #cur.executescript("DROP TABLE IF EXISTS groups")
         cur.executescript("""CREATE TABLE IF NOT EXISTS groups (
         group_id INTEGER primary key AUTOINCREMENT,
         group_title TEXT NOT NULL,

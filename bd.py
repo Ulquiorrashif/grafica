@@ -17,11 +17,11 @@ def groups_add(a,b):
         cur.execute("INSERT INTO groups (group_title, group_faculty,group_amount) VALUES (?,?,?)", (group_title,group_faculty,0))
 
 
-def studgroups_add():
+def studgroups_add(a,b):
     with sq.connect("uni.db") as con:
         cur = con.cursor()
-        user_id = input("Введите номер зачётки студента: ")
-        group_title = input("Введите название группы, в которую хотите добавить студента: ")
+        user_id = a #input("Введите номер зачётки студента: ")
+        group_title =b # input("Введите название группы, в которую хотите добавить студента: ")
         if cur.execute("SELECT 1 FROM groups WHERE group_title = :group", {"group": group_title}).fetchone():
             if cur.execute("SELECT 1 FROM students WHERE user_id = :FIO", {"FIO": user_id}).fetchone():
                   cur.execute("INSERT INTO group_members (group_title, user_id) VALUES (?,?)", (group_title, user_id,))
@@ -32,7 +32,7 @@ def studgroups_add():
         else:
             print("ошибка")
             exit(0)
-#studgroups_add()
+#studgroups_add(a,b)
 
 
 
@@ -45,7 +45,7 @@ def groups_output():
         records = cur.fetchall()
         for row in records:
             output.append(row[1])
-        print(output)
+        return output
 
 
 

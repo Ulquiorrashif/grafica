@@ -10,6 +10,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+import bd
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -149,11 +151,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        self.lineEdit.setPlaceholderText("Иван")
-
-        self.lineEdit_3.setPlaceholderText("Иванов")
-        self.lineEdit_4.setPlaceholderText("Иванович")
-        self.lineEdit_6.setPlaceholderText("361040372")
+        self.Ustanovka()
         self.pushButton_2.clicked.connect(self.pu)
 
     def retranslateUi(self, MainWindow):
@@ -163,10 +161,7 @@ class Ui_MainWindow(object):
         self.lineEdit.setToolTip(_translate("MainWindow", "<html><head/><body><p>sdfsfddf </p></body></html>"))
         self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Фамилия</span></p></body></html>"))
         self.lineEdit_3.setToolTip(_translate("MainWindow", "<html><head/><body><p>sdfsfddf </p></body></html>"))
-        self.comboBox.setItemText(0, _translate("MainWindow", "1"))
-        self.comboBox.setItemText(1, _translate("MainWindow", "2"))
-        self.comboBox.setItemText(2, _translate("MainWindow", "3"))
-        self.comboBox.setItemText(3, _translate("MainWindow", "4"))
+
         self.pushButton_2.setToolTip(_translate("MainWindow", "<html><head/><body><p>фыв</p></body></html>"))
         self.pushButton_2.setText(_translate("MainWindow", "Добавить ученика"))
         self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Отчество</span></p><p><br/></p></body></html>"))
@@ -176,6 +171,9 @@ class Ui_MainWindow(object):
         self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Номер зач. книжки</span></p></body></html>"))
 
     def Ustanovka(self):
+        mas_name = bd.groups_output()  # Проверяем набор групп
+        for i in range (0,len(mas_name)):
+            self.comboBox.setItemText(i, mas_name[i])
         self.lineEdit.setText("")
         self.lineEdit_6.setText("")
         self.lineEdit_3.setText("")
@@ -186,7 +184,7 @@ class Ui_MainWindow(object):
         self.lineEdit_6.setPlaceholderText("361040372")
 
     def pu(self):
-        ####
+        bd.studgroups_add(int(self.lineEdit_6.text()),self.comboBox.currentText())
         self.Ustanovka()
 
 

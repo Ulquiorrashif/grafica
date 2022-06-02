@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Glafwindow.ui'
+# Form implementation generated from reading ui file 'Glafwindow(1).ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -9,17 +9,17 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from AddU import Ui_AddUchenik
+from  AddU import Ui_AddUchenik
 from addg import Ui_AddGrupp
 from adduvg import Ui_MainWindow
 
-class Ui_Dialog():
+class Ui_Dialog(object):
     def setupUi(self, Dialog):
-        Dialog.setObjectName("Добавление")
-        Dialog.resize(300, 300)
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(806, 536)
         Dialog.setStyleSheet("background-color: rgb(0, 0, 62);")
         self.pushButton = QtWidgets.QPushButton(Dialog)
-        self.pushButton.setGeometry(QtCore.QRect(10, 100, 281, 51))
+        self.pushButton.setGeometry(QtCore.QRect(160, 210, 501, 71))
         font = QtGui.QFont()
         font.setFamily("Eras Bold ITC")
         font.setPointSize(12)
@@ -42,9 +42,10 @@ class Ui_Dialog():
 "border-radius: 25 solid ;\n"
 "border-color:  rgb(213, 194, 166);}\n"
 "")
+        self.pushButton.setIconSize(QtCore.QSize(25, 25))
         self.pushButton.setObjectName("pushButton")
         self.pushButton_4 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_4.setGeometry(QtCore.QRect(10, 170, 281, 51))
+        self.pushButton_4.setGeometry(QtCore.QRect(160, 310, 501, 71))
         font = QtGui.QFont()
         font.setFamily("Eras Bold ITC")
         font.setPointSize(12)
@@ -70,7 +71,7 @@ class Ui_Dialog():
 "")
         self.pushButton_4.setObjectName("pushButton_4")
         self.pushButton_2 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_2.setGeometry(QtCore.QRect(10, 240, 281, 51))
+        self.pushButton_2.setGeometry(QtCore.QRect(160, 410, 501, 61))
         font = QtGui.QFont()
         font.setFamily("Eras Bold ITC")
         font.setPointSize(12)
@@ -89,52 +90,48 @@ class Ui_Dialog():
 "")
         self.pushButton_2.setObjectName("pushButton_2")
         self.label = QtWidgets.QLabel(Dialog)
-        self.label.setGeometry(QtCore.QRect(10, 20, 281, 51))
+        self.label.setGeometry(QtCore.QRect(100, 70, 611, 81))
         font = QtGui.QFont()
         font.setFamily("Eras Bold ITC")
-        font.setPointSize(12)
+        font.setPointSize(16)
         self.label.setFont(font)
         self.label.setStyleSheet("border: 3px solid;\n"
 "\n"
 "border-radius: 25 solid ;\n"
 "border-color: White;\n"
-"text: white")
+"")
         self.label.setObjectName("label")
-
-        self.pushButton.clicked.connect(self.Set)
-        self.pushButton_2.clicked.connect(self.Set2)
-        self.pushButton_4.clicked.connect(self.Set4)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.pushButton.clicked.connect(self.Set)
+        self.pushButton_4.clicked.connect(self.Set2)
+        self.pushButton_2.clicked.connect(self.Set4)
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Добавление"))
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.pushButton.setToolTip(_translate("Dialog", "<html><head/><body><p>фыв</p></body></html>"))
         self.pushButton.setText(_translate("Dialog", "Добавить ученика"))
-        self.pushButton_2.setText(_translate("Dialog", "Добавить группу"))
-        self.pushButton_4.setText(_translate("Dialog", "Добавить ученика в группу"))
+        self.pushButton_4.setText(_translate("Dialog", "Добавить группу"))
+        self.pushButton_2.setText(_translate("Dialog", "Добавить ученика в группу"))
         self.label.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" color:#ffffff;\">Категории</span></p></body></html>"))
 
-
     def Set(self):
-        self.window=QtWidgets.QMainWindow()
-        self.f= Ui_AddUchenik()
+        self.window = QtWidgets.QMainWindow()
+        self.f = Ui_AddUchenik()
         self.f.setupUi(self.window)
         self.window.show()
+
     def Set2(self):
-        self.window=QtWidgets.QMainWindow()
-        self.f=Ui_AddGrupp()
+        self.window = QtWidgets.QMainWindow()
+        self.f = Ui_AddGrupp()
         self.f.setupUi(self.window)
         self.window.show()
+
     def Set4(self):
-        self.window=QtWidgets.QMainWindow()
-        self.f=Ui_MainWindow()
+        self.window = QtWidgets.QMainWindow()
+        self.f = Ui_MainWindow()
         self.f.setupUi(self.window)
         self.window.show()
-
-
-
-
 

@@ -48,16 +48,16 @@ class Ui_MainWindow(object):
         self.label_2.setStyleSheet("Text:wihte;\n"
 "")
         self.label_2.setObjectName("label_2")
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_3.setGeometry(QtCore.QRect(410,80,251,51))
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_2.setGeometry(QtCore.QRect(410, 80, 251, 51))
         font = QtGui.QFont()
         font.setFamily("Eras Bold ITC")
         font.setPointSize(12)
-        self.lineEdit_3.setFont(font)
-        self.lineEdit_3.setStyleSheet("background-color: rgb(208, 178, 9);\n"
+        self.lineEdit_2.setFont(font)
+        self.lineEdit_2.setStyleSheet("background-color: rgb(208, 178, 9);\n"
 "text-color:rgb(255, 255, 255);")
-        self.lineEdit_3.setText("")
-        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.lineEdit_2.setText("")
+        self.lineEdit_2.setObjectName("lineEdit_3")
         self.comboBox = QtWidgets.QComboBox(self.centralwidget)
         self.comboBox.setGeometry(QtCore.QRect(160, 290, 501, 31))
         self.comboBox.setStyleSheet("background-color: rgb(208, 178, 9);\n"
@@ -101,8 +101,19 @@ class Ui_MainWindow(object):
         self.label_3.setStyleSheet("Text:wihte;\n"
 "")
         self.label_3.setObjectName("label_3")
+        self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_3.setGeometry(QtCore.QRect(410, 150, 251, 51))
+        font = QtGui.QFont()
+        font.setFamily("Eras Bold ITC")
+        font.setPointSize(12)
+        self.lineEdit_3.setFont(font)
+        self.lineEdit_3.setStyleSheet("background-color: rgb(208, 178, 9);\n"
+"text-color:rgb(255, 255, 255);")
+        self.lineEdit_3.setText("")
+        self.lineEdit_3.setObjectName("lineEdit_4")
+
         self.lineEdit_4 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_4.setGeometry(QtCore.QRect(410,150,251,51))
+        self.lineEdit_4.setGeometry(QtCore.QRect(410, 220, 251, 51))
         font = QtGui.QFont()
         font.setFamily("Eras Bold ITC")
         font.setPointSize(12)
@@ -111,26 +122,15 @@ class Ui_MainWindow(object):
 "text-color:rgb(255, 255, 255);")
         self.lineEdit_4.setText("")
         self.lineEdit_4.setObjectName("lineEdit_4")
-
-        self.lineEdit_6 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_6.setGeometry(QtCore.QRect(410, 220, 251, 51))
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(160, 230, 241, 31))
         font = QtGui.QFont()
         font.setFamily("Eras Bold ITC")
         font.setPointSize(12)
-        self.lineEdit_6.setFont(font)
-        self.lineEdit_6.setStyleSheet("background-color: rgb(208, 178, 9);\n"
-"text-color:rgb(255, 255, 255);")
-        self.lineEdit_6.setText("")
-        self.lineEdit_6.setObjectName("lineEdit_4")
-        self.label_6 = QtWidgets.QLabel(self.centralwidget)
-        self.label_6.setGeometry(QtCore.QRect(160,230,241,31))
-        font = QtGui.QFont()
-        font.setFamily("Eras Bold ITC")
-        font.setPointSize(12)
-        self.label_6.setFont(font)
-        self.label_6.setStyleSheet("Text:wihte;\n"
+        self.label_4.setFont(font)
+        self.label_4.setStyleSheet("Text:wihte;\n"
 "")
-        self.label_6.setObjectName("label_4")
+        self.label_4.setObjectName("label_4")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 340, 21))
@@ -151,30 +151,30 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Имя</span></p></body></html>"))
         self.lineEdit.setToolTip(_translate("MainWindow", "<html><head/><body><p>sdfsfddf </p></body></html>"))
         self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Фамилия</span></p></body></html>"))
-        self.lineEdit_3.setToolTip(_translate("MainWindow", "<html><head/><body><p>sdfsfddf </p></body></html>"))
+        self.lineEdit_2.setToolTip(_translate("MainWindow", "<html><head/><body><p>sdfsfddf </p></body></html>"))
 
         self.pushButton_2.setToolTip(_translate("MainWindow", "<html><head/><body><p>фыв</p></body></html>"))
         self.pushButton_2.setText(_translate("MainWindow", "Добавить ученика"))
         self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Отчество</span></p><p><br/></p></body></html>"))
+        self.lineEdit_3.setToolTip(_translate("MainWindow", "<html><head/><body><p>sdfsfddf </p></body></html>"))
         self.lineEdit_4.setToolTip(_translate("MainWindow", "<html><head/><body><p>sdfsfddf </p></body></html>"))
-        self.lineEdit_6.setToolTip(_translate("MainWindow", "<html><head/><body><p>sdfsfddf </p></body></html>"))
-        self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Номер зач. книжки</span></p></body></html>"))
+        self.label_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Номер зач. книжки</span></p></body></html>"))
 
     def Ustanovka(self):
         mas_name = bd.groups_output()  # Проверяем набор групп
         for i in range (0,len(mas_name)):
             self.comboBox.setItemText(i, mas_name[i])
         self.lineEdit.setText("")
-        self.lineEdit_6.setText("")
-        self.lineEdit_3.setText("")
         self.lineEdit_4.setText("")
+        self.lineEdit_2.setText("")
+        self.lineEdit_3.setText("")
         self.lineEdit.setPlaceholderText("Иван")
-        self.lineEdit_3.setPlaceholderText("Иванов")
-        self.lineEdit_4.setPlaceholderText("Иванович")
-        self.lineEdit_6.setPlaceholderText("361040372")
+        self.lineEdit_2.setPlaceholderText("Иванов")
+        self.lineEdit_3.setPlaceholderText("Иванович")
+        self.lineEdit_4.setPlaceholderText("361040372")
 
     def pu(self):
-        bd.studgroups_add(int(self.lineEdit_6.text()),self.comboBox.currentText())
+        bd.studgroups_add(int(self.lineEdit_4.text()), self.comboBox.currentText())
         self.Ustanovka()
 
 

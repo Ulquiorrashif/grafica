@@ -44,8 +44,8 @@ class Ui_Dialog(object):
 "")
         self.pushButton.setIconSize(QtCore.QSize(25, 25))
         self.pushButton.setObjectName("pushButton")
-        self.pushButton_4 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_4.setGeometry(QtCore.QRect(160, 310, 501, 71))
+        self.pushButton_3 = QtWidgets.QPushButton(Dialog)
+        self.pushButton_3.setGeometry(QtCore.QRect(160, 310, 501, 71))
         font = QtGui.QFont()
         font.setFamily("Eras Bold ITC")
         font.setPointSize(12)
@@ -55,9 +55,9 @@ class Ui_Dialog(object):
         font.setWeight(50)
         font.setStrikeOut(False)
         font.setKerning(True)
-        self.pushButton_4.setFont(font)
-        self.pushButton_4.setMouseTracking(True)
-        self.pushButton_4.setStyleSheet("QPushButton{\n"
+        self.pushButton_3.setFont(font)
+        self.pushButton_3.setMouseTracking(True)
+        self.pushButton_3.setStyleSheet("QPushButton{\n"
 "background-color: rgb(1, 226, 178);\n"
 "background-color: rgb(208, 178, 9);\n"
 "border: 3px solid;\n"
@@ -69,7 +69,7 @@ class Ui_Dialog(object):
 "border-radius: 25 solid ;\n"
 "border-color:  rgb(213, 194, 166);}\n"
 "")
-        self.pushButton_4.setObjectName("pushButton_4")
+        self.pushButton_3.setObjectName("pushButton_4")
         self.pushButton_2 = QtWidgets.QPushButton(Dialog)
         self.pushButton_2.setGeometry(QtCore.QRect(160, 410, 501, 61))
         font = QtGui.QFont()
@@ -105,7 +105,7 @@ class Ui_Dialog(object):
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
         self.pushButton.clicked.connect(self.Set)
-        self.pushButton_4.clicked.connect(self.Set2)
+        self.pushButton_3.clicked.connect(self.Set2)
         self.pushButton_2.clicked.connect(self.Set4)
 
     def retranslateUi(self, Dialog):
@@ -113,7 +113,7 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.pushButton.setToolTip(_translate("Dialog", "<html><head/><body><p>фыв</p></body></html>"))
         self.pushButton.setText(_translate("Dialog", "Добавить ученика"))
-        self.pushButton_4.setText(_translate("Dialog", "Добавить группу"))
+        self.pushButton_3.setText(_translate("Dialog", "Добавить группу"))
         self.pushButton_2.setText(_translate("Dialog", "Добавить ученика в группу"))
         self.label.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" color:#ffffff;\">Категории</span></p></body></html>"))
 

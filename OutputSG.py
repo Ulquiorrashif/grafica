@@ -52,7 +52,7 @@ class OutputStudentNewG(object):
         self.tableWidget.setHorizontalHeaderLabels(["ФИО студента", "Предыдущая группа", "Текущая группа", "Предыдущее направление"])
 
         for i in range(len(allList)):
-            for j in range(4):
+            for j in range(3):
                 self.tableWidget.setItem(i, j, QTableWidgetItem(str(allList[i][j])))
         self.tableWidget.horizontalHeader().setStretchLastSection(True)
         self.tableWidget.resizeColumnsToContents()

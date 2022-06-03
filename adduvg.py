@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'adduvg.ui'
+# Form implementation generated from reading ui file 'adduvg(1).ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -9,9 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 import bd
-
+from bd import studgroups_add
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -20,55 +19,18 @@ class Ui_MainWindow(object):
         MainWindow.setStyleSheet("background-color: rgb(0, 0, 62);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(160,20,241,31))
-        font = QtGui.QFont()
-        font.setFamily("Eras Bold ITC")
-        font.setPointSize(12)
-        self.label.setFont(font)
-        self.label.setStyleSheet("Text:wihte;\n"
-"")
-        self.label.setObjectName("label")
-        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(410,10,251,51))
-        font = QtGui.QFont()
-        font.setFamily("Eras Bold ITC")
-        font.setPointSize(12)
-        self.lineEdit.setFont(font)
-        self.lineEdit.setStyleSheet("background-color: rgb(208, 178, 9);\n"
-"text-color:rgb(255, 255, 255);")
-        self.lineEdit.setText("")
-        self.lineEdit.setObjectName("lineEdit")
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(160,90,241,31))
-        font = QtGui.QFont()
-        font.setFamily("Eras Bold ITC")
-        font.setPointSize(12)
-        self.label_2.setFont(font)
-        self.label_2.setStyleSheet("Text:wihte;\n"
-"")
-        self.label_2.setObjectName("label_2")
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_2.setGeometry(QtCore.QRect(410, 80, 251, 51))
-        font = QtGui.QFont()
-        font.setFamily("Eras Bold ITC")
-        font.setPointSize(12)
-        self.lineEdit_2.setFont(font)
-        self.lineEdit_2.setStyleSheet("background-color: rgb(208, 178, 9);\n"
-"text-color:rgb(255, 255, 255);")
-        self.lineEdit_2.setText("")
-        self.lineEdit_2.setObjectName("lineEdit_3")
         self.comboBox = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox.setGeometry(QtCore.QRect(160, 290, 501, 31))
+        self.comboBox.setGeometry(QtCore.QRect(150, 220, 501, 41))
         self.comboBox.setStyleSheet("background-color: rgb(208, 178, 9);\n"
-"text-color:rgb(255, 255, 255);")
+"text-color:rgb(255, 255, 255);\n"
+"border: 3px solid;\n"
+"border-color:  rgb(213, 194, 166);")
         self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
+
+
+
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(160, 350, 501, 51))
+        self.pushButton_2.setGeometry(QtCore.QRect(140, 310, 521, 61))
         font = QtGui.QFont()
         font.setFamily("Eras Bold ITC")
         font.setPointSize(12)
@@ -92,48 +54,49 @@ class Ui_MainWindow(object):
 "border-color:  rgb(213, 194, 166);}\n"
 "")
         self.pushButton_2.setObjectName("pushButton_2")
-        self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(160,160,241,31))
+        self.label_6 = QtWidgets.QLabel(self.centralwidget)
+        self.label_6.setGeometry(QtCore.QRect(160, 130, 191, 51))
         font = QtGui.QFont()
         font.setFamily("Eras Bold ITC")
         font.setPointSize(12)
-        self.label_3.setFont(font)
-        self.label_3.setStyleSheet("Text:wihte;\n"
+        self.label_6.setFont(font)
+        self.label_6.setStyleSheet("Text:wihte;\n"
 "")
-        self.label_3.setObjectName("label_3")
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_3.setGeometry(QtCore.QRect(410, 150, 251, 51))
+        self.label_6.setObjectName("label_6")
+        self.comboBox_2 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_2.setGeometry(QtCore.QRect(360, 50, 291, 41))
+        self.comboBox_2.setStyleSheet("background-color: rgb(208, 178, 9);\n"
+"text-color:rgb(255, 255, 255);\n"
+"border: 3px solid;\n"
+"border-color:  rgb(213, 194, 166);")
+        self.comboBox_2.setObjectName("comboBox_2")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        #self.comboBox_2.addItem("")
+        self.label_7 = QtWidgets.QLabel(self.centralwidget)
+        self.label_7.setGeometry(QtCore.QRect(160, 60, 191, 41))
         font = QtGui.QFont()
         font.setFamily("Eras Bold ITC")
         font.setPointSize(12)
-        self.lineEdit_3.setFont(font)
-        self.lineEdit_3.setStyleSheet("background-color: rgb(208, 178, 9);\n"
-"text-color:rgb(255, 255, 255);")
-        self.lineEdit_3.setText("")
-        self.lineEdit_3.setObjectName("lineEdit_4")
-
-        self.lineEdit_4 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_4.setGeometry(QtCore.QRect(410, 220, 251, 51))
-        font = QtGui.QFont()
-        font.setFamily("Eras Bold ITC")
-        font.setPointSize(12)
-        self.lineEdit_4.setFont(font)
-        self.lineEdit_4.setStyleSheet("background-color: rgb(208, 178, 9);\n"
-"text-color:rgb(255, 255, 255);")
-        self.lineEdit_4.setText("")
-        self.lineEdit_4.setObjectName("lineEdit_4")
-        self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(160, 230, 241, 31))
-        font = QtGui.QFont()
-        font.setFamily("Eras Bold ITC")
-        font.setPointSize(12)
-        self.label_4.setFont(font)
-        self.label_4.setStyleSheet("Text:wihte;\n"
+        self.label_7.setFont(font)
+        self.label_7.setStyleSheet("Text:wihte;\n"
 "")
-        self.label_4.setObjectName("label_4")
+        self.label_7.setObjectName("label_7")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(360, 130, 291, 51))
+        font = QtGui.QFont()
+        font.setFamily("Eras Bold ITC")
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("background-color: rgb(208, 178, 9);\n"
+"text-color:rgb(255, 255, 255);\n"
+"border: 3px solid;\n"
+"border-color:  rgb(213, 194, 166)")
+        self.label_2.setLocale(QtCore.QLocale(QtCore.QLocale.Sangu, QtCore.QLocale.Tanzania))
+        self.label_2.setObjectName("label_2")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 340, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -142,41 +105,29 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        self.Ustanovka()
         self.pushButton_2.clicked.connect(self.pu)
+        self.Ustanovka()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Имя</span></p></body></html>"))
-        self.lineEdit.setToolTip(_translate("MainWindow", "<html><head/><body><p>sdfsfddf </p></body></html>"))
-        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Фамилия</span></p></body></html>"))
-        self.lineEdit_2.setToolTip(_translate("MainWindow", "<html><head/><body><p>sdfsfddf </p></body></html>"))
 
         self.pushButton_2.setToolTip(_translate("MainWindow", "<html><head/><body><p>фыв</p></body></html>"))
         self.pushButton_2.setText(_translate("MainWindow", "Добавить ученика"))
-        self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Отчество</span></p><p><br/></p></body></html>"))
-        self.lineEdit_3.setToolTip(_translate("MainWindow", "<html><head/><body><p>sdfsfddf </p></body></html>"))
-        self.lineEdit_4.setToolTip(_translate("MainWindow", "<html><head/><body><p>sdfsfddf </p></body></html>"))
-        self.label_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" color:#ffffff;\">Номер зач. книжки</span></p></body></html>"))
+        self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; color:#ffffff;\">Номер зач. книжки</span></p></body></html>"))
+        self.comboBox_2.setItemText(0, _translate("MainWindow", "1"))
+        self.comboBox_2.setItemText(1, _translate("MainWindow", "2"))
+        self.comboBox_2.setItemText(2, _translate("MainWindow", "3"))
+        self.comboBox_2.setItemText(3, _translate("MainWindow", "4"))
+        self.label_7.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; color:#ffffff;\">ФИО</span></p><p><br/></p></body></html>"))
+        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
 
     def Ustanovka(self):
         mas_name = bd.groups_output()  # Проверяем набор групп
-        for i in range (0,len(mas_name)):
+        for i in range(0, len(mas_name)):
+            self.comboBox.addItem("")
             self.comboBox.setItemText(i, mas_name[i])
-        self.lineEdit.setText("")
-        self.lineEdit_4.setText("")
-        self.lineEdit_2.setText("")
-        self.lineEdit_3.setText("")
-        self.lineEdit.setPlaceholderText("Иван")
-        self.lineEdit_2.setPlaceholderText("Иванов")
-        self.lineEdit_3.setPlaceholderText("Иванович")
-        self.lineEdit_4.setPlaceholderText("361040372")
 
     def pu(self):
         bd.studgroups_add(int(self.lineEdit_4.text()), self.comboBox.currentText())
         self.Ustanovka()
-
-
-
-

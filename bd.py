@@ -1,5 +1,5 @@
 import sqlite3 as sq
-
+import dimus as d
 
 
 
@@ -8,7 +8,8 @@ def students_add(a,b):
         cur = con.cursor()
         user_FIO =  a  # input("Введите ФИО студента, которого хотите отредактировать: ")
         user_birthday = b#input("Введите ДР студента, которого хотите отредактировать: ")
-        cur.execute("INSERT INTO students (user_FIO, user_birthday) VALUES (?,?)", (user_FIO, user_birthday))
+        photo=d.convert_photo_by_name()
+        cur.execute("INSERT INTO students (user_FIO, user_birthday,user_photo) VALUES (?,?,?)", (user_FIO, user_birthday,photo))
 def groups_add(a,b):
     with sq.connect("uni.db") as con:
         cur = con.cursor()

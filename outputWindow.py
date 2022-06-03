@@ -100,7 +100,7 @@ class Ui_Output():
         self.pushButton_2.setObjectName("pushButton_2")
         self.verticalLayout.addWidget(self.pushButton_2)
         #карточка
-        """
+
         self.pushButton_3 = QtWidgets.QPushButton(self.verticalLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Eras Bold ITC")
@@ -129,7 +129,7 @@ class Ui_Output():
         self.pushButton_3.setAutoRepeatInterval(100)
         self.pushButton_3.setObjectName("pushButton_3")
         self.verticalLayout.addWidget(self.pushButton_3)
-        """
+
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(80, 60, 639, 111))
         font = QtGui.QFont()
@@ -149,7 +149,7 @@ class Ui_Output():
         self.pushButton.clicked.connect(self.Set)
         self.pushButton_2.clicked.connect(self.Set2)
         self.pushButton_4.clicked.connect(self.Set4)
-        #self.pushButton_3.clicked.connect(self.Set3)
+        self.pushButton_3.clicked.connect(self.Set3)
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
@@ -158,7 +158,7 @@ class Ui_Output():
         self.pushButton.setText(_translate("Dialog", "Список студентов"))
         self.pushButton_2.setText(_translate("Dialog", "Список групп"))
         self.pushButton_4.setText(_translate("Dialog", "Список переведенных студентов"))
-        #self.pushButton_3.setText(_translate("Dialog", "Карточка студента"))
+        self.pushButton_3.setText(_translate("Dialog", "Карточка студента"))
         self.label.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt; color:#ffffff;\">Категории</span></p></body></html>"))
 
 

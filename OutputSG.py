@@ -47,7 +47,7 @@ class OutputStudentNewG(object):
         allList = cur.execute("""SELECT students.user_FIO, redact_group.group_DO, redact_group.group_POSLE, group_faculty FROM redact_group 
                                 INNER JOIN students ON redact_group.user_id = students.user_id
                                 INNER JOIN groups ON redact_group.group_DO = groups.group_title""").fetchall()
-        self.tableWidget.setColumnCount(4)
+        self.tableWidget.setColumnCount(3)
         self.tableWidget.setRowCount(len(allList))
         self.tableWidget.setHorizontalHeaderLabels(["ФИО студента", "Предыдущая группа", "Текущая группа", "Предыдущее направление"])
 

@@ -10,148 +10,38 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import bd
+import sys
+from PyQt5 import uic
 from bd import studgroups_add
-
-class Ui_MainWindow(object):
-    mas_zac=[]
-    mas_fio=[]
+class test(QtWidgets.QMainWindow):
+    mas_zac = []
+    mas_fio = []
     def __init__(self):
-        self.setupUi()
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 464)
-        MainWindow.setStyleSheet("background-color: rgb(0, 0, 62);")
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
-        self.comboBox = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox.setGeometry(QtCore.QRect(150, 220, 501, 41))
-        self.comboBox.setStyleSheet("background-color: rgb(208, 178, 9);\n"
-"text-color:rgb(255, 255, 255);\n"
-"border: 3px solid;\n"
-"border-color:  rgb(213, 194, 166);")
-        self.comboBox.setObjectName("comboBox")
-
-
-
-        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(140, 310, 521, 61))
-        font = QtGui.QFont()
-        font.setFamily("Eras Bold ITC")
-        font.setPointSize(12)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setWeight(50)
-        self.pushButton_2.setFont(font)
-        self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
-        self.pushButton_2.setMouseTracking(True)
-        self.pushButton_2.setStyleSheet("QPushButton{\n"
-"background-color: rgb(1, 226, 178);\n"
-"background-color: rgb(208, 178, 9);\n"
-"border: 3px solid;\n"
-"border-radius: 25 solid ;\n"
-"border-color:  rgb(213, 194, 166);}\n"
-"QPushButton:pressed{\n"
-"background-color: rgb(191, 162, 0);\n"
-"border: 3px solid;\n"
-"border-radius: 25 solid ;\n"
-"border-color:  rgb(213, 194, 166);}\n"
-"")
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.label_6 = QtWidgets.QLabel(self.centralwidget)
-        self.label_6.setGeometry(QtCore.QRect(160, 130, 191, 51))
-        font = QtGui.QFont()
-        font.setFamily("Eras Bold ITC")
-        font.setPointSize(12)
-        self.label_6.setFont(font)
-        self.label_6.setStyleSheet("Text:wihte;\n"
-"")
-        self.label_6.setObjectName("label_6")
-        self.comboBox_2 = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox_2.setGeometry(QtCore.QRect(360, 50, 291, 41))
-        self.comboBox_2.setStyleSheet("background-color: rgb(208, 178, 9);\n"
-"text-color:rgb(255, 255, 255);\n"
-"border: 3px solid;\n"
-"border-color:  rgb(213, 194, 166);")
-        self.comboBox_2.setObjectName("comboBox_2")
-
-        #self.comboBox_2.addItem("")
-        self.label_7 = QtWidgets.QLabel(self.centralwidget)
-        self.label_7.setGeometry(QtCore.QRect(160, 60, 191, 41))
-        font = QtGui.QFont()
-        font.setFamily("Eras Bold ITC")
-        font.setPointSize(12)
-        self.label_7.setFont(font)
-        self.label_7.setStyleSheet("Text:wihte;\n"
-"")
-        self.label_7.setObjectName("label_7")
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(360, 130, 291, 51))
-        font = QtGui.QFont()
-        font.setFamily("Eras Bold ITC")
-        font.setPointSize(12)
-        self.label_2.setFont(font)
-        self.label_2.setStyleSheet("background-color: rgb(208, 178, 9);\n"
-"text-color:rgb(255, 255, 255);\n"
-"border: 3px solid;\n"
-"border-color:  rgb(213, 194, 166)")
-        self.label_2.setLocale(QtCore.QLocale(QtCore.QLocale.Sangu, QtCore.QLocale.Tanzania))
-        self.label_2.setObjectName("label_2")
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
-
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        self.pushButton_2.clicked.connect(self.pu)
-        self.comboBox_2.activated['int'].connect(self.check)
-        self.mas_zac,self.mas_fio=bd.student()
-        self.comboBox.addItem("")
-        self.comboBox_2.addItem("")
-        print(self.mas_zac)
+        #QtWidgets.QMainWindow.__init__(self)
+        self.set()
+    def set(self):
+        self.t=uic.loadUi('adduvg(1).ui')
+        self.t.pushButton_2.clicked.connect(self.pusk)
+        self.t.comboBox_2.activated['int'].connect(self.check)
+        self.mas_zac, self.mas_fio = bd.student()
+        self.t.comboBox.addItem("")
+        self.t.comboBox_2.addItem("")
         self.Ustanovka()
-        #self.output()
-
-
-
-    def retranslateUi(self, MainWindow):
-        _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-
-        self.pushButton_2.setToolTip(_translate("MainWindow", "<html><head/><body><p>фыв</p></body></html>"))
-        self.pushButton_2.setText(_translate("MainWindow", "Добавить ученика"))
-        self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; color:#ffffff;\">Номер зач. книжки</span></p></body></html>"))
-
-        self.label_7.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; color:#ffffff;\">ФИО</span></p><p><br/></p></body></html>"))
-        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
-
+        self.t.show()
+    def pusk(self):
+        if self.t.label_2.text()!=" ":
+            bd.studgroups_add(int(self.t.label_2.text()), self.t.comboBox.currentText())
+            self.Ustanovka()
     def Ustanovka(self):
-        self.label_2.setText("")
-        self.comboBox.clear()
-        self.comboBox_2.clear()
+        self.t.label_2.setText("")
+        self.t.comboBox.clear()
+        self.t.comboBox_2.clear()
         mas_name = bd.groups_output()  # Проверяем набор групп
         for i in range(0, len(mas_name)):
-            self.comboBox.addItem("")
-            self.comboBox.setItemText(i, mas_name[i])
+            self.t.comboBox.addItem("")
+            self.t.comboBox.setItemText(i, mas_name[i])
         for i in range(len(self.mas_fio)):
-            self.comboBox_2.addItem("")
-            self.comboBox_2.setItemText(i, self.mas_fio[i])
-
-
-    def pu(self):
-        bd.studgroups_add(int(self.label_2.text()), self.comboBox.currentText())
-        self.Ustanovka()
-        #self.comboBox_2.currentTextChanged.connect(self.Ustanovka)
-        self.comboBox_2.currentTextChanged.connect(self.Ustanovka)
-
-    def check(self,ind):
-        self.label_2.setText(str(self.mas_zac[ind]))
-
-    def output(self):
-        self.Ustanovka()
-        self.comboBox_2.currentTextChanged.connect(self.Ustanovka)
+            self.t.comboBox_2.addItem("")
+            self.t.comboBox_2.setItemText(i, self.mas_fio[i])
+    def check(self, ind):
+        self.t.label_2.setText(str(self.mas_zac[ind]))

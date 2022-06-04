@@ -20,9 +20,6 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtCore, QtGui, QtWidgets
 import Glafwindow
 import OsnovnyaBD
-from AddU import Ui_AddUchenik
-from addg import Ui_AddGrupp
-from adduvg import Ui_MainWindow
 from outputWindow import Ui_Output
 
 class Ui_Main():

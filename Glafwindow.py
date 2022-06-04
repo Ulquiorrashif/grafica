@@ -9,11 +9,12 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import uic
+import adduvg
 from  AddU import Ui_AddUchenik
 from addg import Ui_AddGrupp
-from adduvg import Ui_MainWindow
-
 class Ui_Dialog(object):
+
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(806, 536)
@@ -107,6 +108,7 @@ class Ui_Dialog(object):
         self.pushButton.clicked.connect(self.Set)
         self.pushButton_3.clicked.connect(self.Set2)
         self.pushButton_2.clicked.connect(self.Set4)
+        self.prov=uic.loadUi('adduvg(1).ui')
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
@@ -130,7 +132,8 @@ class Ui_Dialog(object):
         self.window.show()
 
     def Set4(self):
-        app=Q
+        self.prov = adduvg.test()
+        #sys.exit(main.app.exec_())
         # self.window = QtWidgets.QMainWindow()
         # self.f = Ui_MainWindow()
         # self.f.setupUi(self.window)

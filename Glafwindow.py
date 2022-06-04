@@ -130,8 +130,9 @@ class Ui_Dialog(object):
         self.window.show()
 
     def Set4(self):
-        self.window = QtWidgets.QMainWindow()
-        self.f = Ui_MainWindow()
-        self.f.setupUi(self.window)
-        self.window.show()
+        app=Q
+        # self.window = QtWidgets.QMainWindow()
+        # self.f = Ui_MainWindow()
+        # self.f.setupUi(self.window)
+        # self.window.show()
 

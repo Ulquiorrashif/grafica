@@ -1,3 +1,4 @@
+import sqlite3
 import sqlite3 as sq
 import dimus as d
 
@@ -47,6 +48,20 @@ def groups_output():
         for row in records:
             output.append(row[1])
         return output
+def student():
+    zachetki = []
+    fio = []
+    con = sqlite3.connect('uni.db')
+    cur = con.cursor()
+    id_stVg = cur.execute("""SELECT user_id FROM group_members""").fetchall() #список кортежей студентов с группой
+    id_st = cur.execute("""SELECT user_id FROM students""").fetchall() #список кортежей студентов без группы
+    for i in range(len(id_st)):
+        if id_st[i] not in id_stVg:
+            id_s = id_st[i][0]
+            us_fio = (cur.execute("""SELECT user_FIO FROM students WHERE user_id = ?""", (id_s,)).fetchall())
+            zachetki.append(id_st[i][0])
+            fio.append(us_fio[0][0])
+    return zachetki,fio
 
 def students_output():
     with sq.connect("uni.db") as con:

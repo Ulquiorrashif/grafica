@@ -13,9 +13,11 @@ def set_default_photo(id):
     with sq.connect("uni.db") as con:
         cur = con.cursor()
         cur.execute("UPDATE students SET user_photo = :photo WHERE user_id=:id", {'photo': photo,'id': id})
+
 def set_custom_photo(id):
     photo=convert_photo_by_name(eg.fileopenbox(filetypes=["*.jpg"]))
     with sq.connect("uni.db") as con:
         cur=con.cursor()
         cur.execute("UPDATE students SET user_photo=:photo WHERE user_id=:id",{'photo': photo,'id': id})
 # def student_card():
+

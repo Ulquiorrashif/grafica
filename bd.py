@@ -48,7 +48,40 @@ def groups_output():
             output.append(row[1])
         return output
 
+def students_output():
+    with sq.connect("uni.db") as con:
+        cur = con.cursor()
+        sqlite_select_query = """SELECT s.user_FIO FROM students s"""
+        cur.execute(sqlite_select_query)
+        records = [i[0] for i in cur.fetchall()]
+        return records
 
+#print(students_output())
+
+def student_info_by_name(name):
+    with sq.connect("uni.db") as con:
+        cur = con.cursor()
+        sqlite_select_query = "SELECT user_id from students WHERE user_FIO = ?"
+        cur.execute(sqlite_select_query, [name])
+        student_id = str(cur.fetchall())[2:-3]
+
+        sqlite_select_query = "SELECT user_birthday from students WHERE user_FIO = ?"
+        cur.execute(sqlite_select_query, [name])
+        student_birtday = str(cur.fetchall())[3:-4]
+        sqlite_select_query = "SELECT group_title from group_members WHERE user_id = ?"
+        cur.execute(sqlite_select_query, [student_id])
+        student_group = str(cur.fetchall())[3:-4]
+        sqlite_select_query = "SELECT group_faculty from groups WHERE group_title = ?"
+        cur.execute(sqlite_select_query, [student_group])
+        student_faculty = str(cur.fetchall())[3:-4]
+        sqlite_select_query = "SELECT user_photo from students WHERE user_FIO = ?"
+        cur.execute(sqlite_select_query, [name])
+        student_photo = cur.fetchone()[0]
+        result = (student_id, student_birtday, student_group, student_faculty, student_photo)
+        result = [i if i else "No Data" for i in result]
+        return result
+
+#print(student_info_by_name("Андреев Егор Андреевич"))
 
 
 

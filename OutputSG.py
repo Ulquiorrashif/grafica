@@ -47,12 +47,18 @@ class OutputStudentNewG(object):
         allList = cur.execute("""SELECT students.user_FIO, redact_group.group_DO, redact_group.group_POSLE, group_faculty FROM redact_group 
                                 INNER JOIN students ON redact_group.user_id = students.user_id
                                 INNER JOIN groups ON redact_group.group_DO = groups.group_title""").fetchall()
-        self.tableWidget.setColumnCount(3)
+        list2 = cur.execute("""SELECT group_faculty FROM redact_group 
+                                INNER JOIN groups ON redact_group.group_POSLE = groups.group_title""").fetchall()
+        for i in range(len(allList)):
+            allList = [allList[i]+list2[i]]
+        print(allList)
+             
+        self.tableWidget.setColumnCount(5)
         self.tableWidget.setRowCount(len(allList))
-        self.tableWidget.setHorizontalHeaderLabels(["ФИО студента", "Предыдущая группа", "Текущая группа", "Предыдущее направление"])
+        self.tableWidget.setHorizontalHeaderLabels(["ФИО студента", "Предыдущая группа", "Текущая группа", "Предыдущее направление", "Текущее направление"])
 
         for i in range(len(allList)):
-            for j in range(3):
+            for j in range(5):
                 self.tableWidget.setItem(i, j, QTableWidgetItem(str(allList[i][j])))
         self.tableWidget.horizontalHeader().setStretchLastSection(True)
         self.tableWidget.resizeColumnsToContents()
